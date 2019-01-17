@@ -1,0 +1,26 @@
+{
+  "name": "calico",
+  "version": "1.0.0",
+  "description": "Generates color information about color palette",
+  "main": "index.js",
+  "scripts": {
+    "calico": "node --experimental-modules index.mjs",
+    "static": "node --experimental-modules static.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericmikkelsen/Calico.git"
+  },
+  "keywords": [
+    "color",
+    "a11y",
+    "accessibility"
+  ],
+  "author": "Eric Mikkelsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ericmikkelsen/Calico/issues"
+  },
+  "homepage": "https://github.com/ericmikkelsen/Calico#readme",
+  "dependencies": {}
+}
