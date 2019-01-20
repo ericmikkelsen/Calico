@@ -4,7 +4,7 @@
   "description": "Generates color information about color palette",
   "main": "index.js",
   "scripts": {
-    "calico": "node --experimental-modules index.mjs",
+    "build": "node --experimental-modules index.mjs",
     "static": "node --experimental-modules static.mjs"
   },
   "repository": {
