@@ -21,7 +21,7 @@ const colors = colorObjects(q)
 
 for (const name in colors.byName) {
     const c = Object.values(colors.byName[name])
-    const ColorListMarkupadds = colorList(c)
+    const ColorListMarkup = colorList(c)
 
     writeFileSync(`./dist/${name}.html`, '<link href="../style.css" rel="stylesheet"><body style="--color:'+name+'">'+ColorListMarkup+'</body>')
 }
