@@ -4,8 +4,9 @@
   "description": "Generates color information about color palette",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir dist && node --experimental-modules index.mjs",
-    "static": "node --experimental-modules static.mjs"
+    "build": "npm run clean && mkdir public && node --experimental-modules index.mjs && npm run copy:assets",
+    "clean": "rm -rf ./public",
+    "copy:assets": "cp -a ./modules/ ./public/ && cp -a ./styles/ ./public/",
   },
   "repository": {
     "type": "git",
