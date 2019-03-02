@@ -4,7 +4,7 @@
   "description": "Generates color information about color palette",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && mkdir public && node --experimental-modules index.mjs && npm run copy:assets",
+    "build": "npm run clean && mkdir public && mkdir public/palettes && node --experimental-modules index.mjs && npm run palette && npm run copy:assets",
     "clean": "rm -rf ./public",
     "copy:assets": "cp -a ./modules/ ./public/ && cp -a ./styles/ ./public/",
     "palette": "node --experimental-modules palette.mjs",
