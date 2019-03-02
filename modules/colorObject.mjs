@@ -2,7 +2,7 @@ import {hexToRGB,RGBToHSL } from './formatColor.mjs'
 import {figureToGround} from './a11y.mjs'
 import lum from './relativeLuminance.mjs'
 import {findNearestNamedColor} from './nearestColor.mjs'
-import paletteHueShift from '../modules/palette'
+import {paletteHueShift} from '../modules/palette'
 
 export default (hex) => {
     const rgb = hexToRGB(hex)
