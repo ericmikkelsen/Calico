@@ -1,5 +1,5 @@
 import relativeLuminance from './relativeLuminance.mjs'
-import {hexToRGB, HSLToRGB, RGBToHex} from './formatColor.mjs'
+import {hexToRGB, hexToHSL, HSLToHex , RGBToHex} from './formatColor.mjs'
 
 const li = 6; // light increment
 const di = 6; // dark increment
@@ -44,6 +44,47 @@ export const paletteHueShift = (hex) => {
 
 }
 
-const paletteFromHue = (hex) => {
-    
+// from the L in HSL
+export const paletteFromLightness = (hex, ) => {
+    const rl = relativeLuminance(hex)
+    const hsl = hexToHSL(hex)
+    const lightSpace = 1 - rl
+    const lightIncrement = lightSpace / li
+    const lightValues = [];
+    let i = hsl[2];
+    //  light
+    while (lightValues.length < 5 && i < 1) {
+        const H = hsl[0]
+        const S = hsl[1]
+        const L = i
+        const hx = HSLToHex([H,S,L])
+        const newRl = relativeLuminance(hx)
+
+        if(newRl >= (lightValues.length + 1) * lightIncrement + rl ){
+            lightValues.push(hx);
+        }
+        i += .001
+    }
+    //dark
+    lightValues.reverse()
+    lightValues.push('#'+hex)
+    const darkIncrement = rl / di
+    const darkValues = []
+    i = hsl[2];
+
+    while (darkValues.length < 5 && i > 0) {
+        const H = hsl[0]
+        const S = hsl[1]
+        const L = i
+        const hx = HSLToHex([H,S,L])
+        const newRl = relativeLuminance(hx)
+        if(newRl <= rl - (darkValues.length + 1) * darkIncrement ){
+            darkValues.push(hx)
+        }
+        i -= .001
+    }
+
+    const palette = lightValues.concat(darkValues)
+    return palette
 }
+
