@@ -10,7 +10,6 @@ const colors = colorObjects(q)
 
 for (const name in colors.byName) {
     const c = Object.values(colors.byName[name])
-    console.log(c);
     const ColorListMarkup = colorList(c)
     writeFileSync(`./public/${name}.html`, '<link href="./styles/style.css" rel="stylesheet"><body style="--color:'+name+'">'+ColorListMarkup+'<script type="module" src="./modules/frontend/namedColor.mjs"></script></body>')
 }
