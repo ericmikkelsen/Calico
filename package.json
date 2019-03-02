@@ -1,14 +1,10 @@
 {
   "name": "calico",
   "version": "1.0.0",
-  "description": "Generates color information about color palette",
+  "description": "Generates color information about color palettes",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && mkdir public && mkdir public/palettes && node --experimental-modules index.mjs && npm run palette && npm run copy:assets",
-    "clean": "rm -rf ./public",
-    "copy:assets": "cp -a ./modules/ ./public/ && cp -a ./styles/ ./public/",
-    "palette": "node --experimental-modules palette.mjs",
-    "serve": "node server.js"
+    "palette": "node --experimental-modules palette.mjs"
   },
   "repository": {
     "type": "git",
