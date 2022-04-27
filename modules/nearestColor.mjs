@@ -1,5 +1,5 @@
 import {hexToRGB} from './formatColor.mjs'
-import namedColors from '../data/named-colors-without-neutrals.json'
+import namedColors from '../data/named-colors-without-neutrals.js'
 const namedColorsValues = Object.values(namedColors)
 const namedColorsKeys = Object.keys(namedColors)
 
